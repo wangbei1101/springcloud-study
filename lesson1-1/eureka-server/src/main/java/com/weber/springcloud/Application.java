@@ -1,4 +1,4 @@
-package com.didispace;
+package com.weber.springcloud;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
