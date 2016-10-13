@@ -14,7 +14,7 @@ public class AddController {
     private AddFeignClient addFeignClient;
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+    public Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b) {
         return addFeignClient.add(a, b);
     }
 

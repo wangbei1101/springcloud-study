@@ -1,6 +1,6 @@
-package com.didispace;
+package com.weber.springcloud;
 
-import com.didispace.web.HelloController;
+import com.weber.springcloud.web.HelloController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

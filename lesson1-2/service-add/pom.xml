@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.weber.springcloud</groupId>
-	<artifactId>service-hello</artifactId>
+	<artifactId>service-add</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>service-hello</name>
+	<name>service-add</name>
 	<description>Spring Cloud project</description>
 
 	<parent>

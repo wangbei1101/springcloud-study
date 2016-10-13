@@ -10,17 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class AddController {
 
     private final Logger logger = Logger.getLogger(getClass());
 
     @Autowired
     private DiscoveryClient client;
-
-    @RequestMapping(value = "/hello" ,method = RequestMethod.GET)
-    public String hello() {
-        return "Hello World";
-    }
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {

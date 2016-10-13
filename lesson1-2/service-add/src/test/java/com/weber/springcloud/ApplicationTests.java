@@ -1,6 +1,6 @@
 package com.weber.springcloud;
 
-import com.weber.springcloud.web.HelloController;
+import com.weber.springcloud.web.AddController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class ApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new AddController()).build();
 	}
 
 	@Test

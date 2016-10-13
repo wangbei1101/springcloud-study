@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("service-add")
 public interface AddFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/add")
-    Integer add(@RequestParam Integer a, @RequestParam Integer b);
+    Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b);
 }
