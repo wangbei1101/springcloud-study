@@ -1,0 +1,17 @@
+*.class
+*.DS_Store
+*.lock
+*.swp
+.settings
+target
+bin
+.classpath
+.project
+.idea
+*.eml
+*.iml
+.build
+rebel.xml
+hb-*
+fj-*
+
