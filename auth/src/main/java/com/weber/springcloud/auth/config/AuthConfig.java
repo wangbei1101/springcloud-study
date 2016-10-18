@@ -25,14 +25,14 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class AuthConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory() // 使用in-memory存储
-                .withClient("client") // client_id
-                .secret("secret") // client_secret
-                .authorizedGrantTypes("authorization_code") // 该client允许的授权类型
-                .scopes("app"); // 允许的授权范围
-    }
+//    @Override
+//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+//        clients.inMemory() // 使用in-memory存储
+//                .withClient("client") // client_id
+//                .secret("secret") // client_secret
+//                .authorizedGrantTypes("authorization_code") // 该client允许的授权类型
+//                .scopes("app"); // 允许的授权范围
+//    }
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -56,7 +56,7 @@ public class AuthConfig extends AuthorizationServerConfigurerAdapter {
         DefaultTokenServices tokenServices = new DefaultTokenServices();
         tokenServices.setTokenStore(endpoints.getTokenStore());
         tokenServices.setSupportRefreshToken(false);
-        tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
+        tokenServices.setClientDetailsService(this.clientDetails());
         tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
         tokenServices.setAccessTokenValiditySeconds( (int) TimeUnit.DAYS.toSeconds(30)); // 30天
         endpoints.tokenServices(tokenServices);
