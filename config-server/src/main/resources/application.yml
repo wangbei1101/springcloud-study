@@ -1,0 +1,37 @@
+server:
+  port: 8888
+
+management:
+  context-path: /admin
+  
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+    hostname: ${CF_INSTANCE_IP:localhost}
+    nonSecurePort: ${CF_INSTANCE_PORT:${PORT:${server.port:8888}}}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:2000}/eureka/
+
+spring:
+  cloud:
+    config:
+      server:
+        overrides:
+          eureka:
+            client:
+              serviceUrl:
+                defaultZone: ${EUREKA_SERVICE_URL:http://localhost:2000}/eureka/
+            instance:
+              hostname: $\{CF_INSTANCE_IP:localhost}
+              nonSecurePort: $\{CF_INSTANCE_PORT:$\{PORT:$\{server.port:8080}}}      
+        git:
+          uri: https://github.com/wangbei1101/config-repo
+          basedir: target/config
