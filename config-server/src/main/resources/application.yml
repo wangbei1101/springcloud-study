@@ -35,6 +35,3 @@ spring:
         git:
           uri: https://github.com/wangbei1101/config-repo
           searchPaths: wangbei1101/config-repo
-          username: wangbei1101
-          password: 110186820nwb
-
