@@ -34,4 +34,7 @@ spring:
               nonSecurePort: $\{CF_INSTANCE_PORT:$\{PORT:$\{server.port:8080}}}      
         git:
           uri: https://github.com/wangbei1101/config-repo
-          basedir: target/config
+          searchPaths: wangbei1101/config-repo
+          username: wangbei1101
+          password: 110186820nwb
+
